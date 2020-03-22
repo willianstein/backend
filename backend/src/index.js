@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 //aqui eu chamo as rotas dentro do arquivo rotas 
 const routes = require('./routes')
 
@@ -11,6 +12,7 @@ mongoose.connect('mongodb+srv://willian:123@cluster0-54el9.mongodb.net/week10?re
 
 });
 
+app.use(cors());
 app.use(express.json());
 //agora todas as rotas estao cadastradas *o json tem que ficar na parte de cima porque ele le linear 
 app.use(routes)
