@@ -43,7 +43,7 @@ function DevForm({ onSubmit }){
     return(
         <form onSubmit={ handleSubmit }>
    <div className ="input-block">
-      <label htmlFor ="github_username">usuario</label>
+      <label htmlFor ="github_username">Nome Usuário</label>
       <input 
       name ="github_username" 
       id="github_username" 
@@ -54,7 +54,17 @@ function DevForm({ onSubmit }){
      </div>
 
      <div className="input-block">
-      <label htmlFor="techs">tecnologia</label>
+      <label htmlFor="techs">Nome Mecânica</label>
+      <input name ="techs" 
+      id="techs"
+       required 
+       value={techs}
+       onChange={e => setTechs(e.target.value)}
+       />
+     </div>
+
+     <div className="input-block">
+      <label htmlFor="techs">Descrição de Serviços</label>
       <input name ="techs" 
       id="techs"
        required 
@@ -65,7 +75,7 @@ function DevForm({ onSubmit }){
 
      <div className ="input-group">
         <div className ="input-block">
-            <label htmlFor ="latitude">latitude</label>
+            <label htmlFor ="latitude">Latitude</label>
             <input type="number" 
             name ="latitude" 
             id="latitude" 
@@ -76,7 +86,7 @@ function DevForm({ onSubmit }){
         </div>
 
         <div className ="input-block">
-            <label htmlFor ="longitude">longitude</label>
+            <label htmlFor ="longitude">Longitude</label>
             <input type="number" 
              name = "longitude" 
              id="longitude" required 
